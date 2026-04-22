@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_COMPOSE_FILE = 'docker-compose.yml'
+        DOCKER_HOST = 'tcp://host.docker.internal:2375'
     }
 
     stages {
