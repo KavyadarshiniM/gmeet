@@ -6,8 +6,12 @@ services:
       context: ./backend
     ports:
       - "8000:8000"
-    env_file:
-      - .env
+    environment:
+      - CLAUDE_API_KEY=AIzaSyBxMR_UiyPHgeAZ99FUMUvj2IEd5dGK30M
+      - MONGODB_URL=mongodb+srv://kishoresankarg23cse_db_user:1234%40sankar@cluster0.1cmrszx.mongodb.net/
+      - DATABASE_NAME=meeting_notes_db
+      - ENVIRONMENT=development
+      - DEBUG=True
     depends_on:
       - mongo
     networks:
