@@ -16,28 +16,28 @@ pipeline {
         stage('Build Backend') {
             steps {
                 echo 'Building backend Docker image...'
-                bat 'docker compose build backend'
+                sh 'docker compose build backend'
             }
         }
 
         stage('Build Frontend') {
             steps {
                 echo 'Building frontend Docker image...'
-                bat 'docker compose build frontend'
+                sh 'docker compose build frontend'
             }
         }
 
         stage('Stop Old Containers') {
             steps {
                 echo 'Stopping old containers...'
-                bat 'docker compose down'
+                sh 'docker compose down'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying all services...'
-                bat 'docker compose up -d'
+                sh 'docker compose up -d'
             }
         }
     }
