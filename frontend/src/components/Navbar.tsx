@@ -10,7 +10,7 @@ export const Navbar: React.FC = () => {
             <Link href="/" className="nav-logo">MEET<span>.</span>PULSE</Link>
             <ul className="nav-links">
                 <li><Link href="/#features">Featu</Link></li>
-                <li><Link href="/#how">Pros</Link></li>
+                <li><Link href="/#how">P</Link></li>
                 <li><Link href="/analytics">Analytics</Link></li>
                 <li><Link href="/calendar">Calender</Link></li>
                 <li><Link href="/generator">Generator</Link></li>
