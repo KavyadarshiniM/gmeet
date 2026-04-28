@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
             <ul className="nav-links">
                 <li><Link href="/#features">Features</Link></li>
                 <li><Link href="/#how">Process</Link></li>
-                <li><Link href="/analytics">Analytics</Link></li>
+                <li><Link href="/analytics">Analyticsssss</Link></li>
                 <li><Link href="/calendar">Calender</Link></li>
                 <li><Link href="/generator">Generator</Link></li>
             </ul>
