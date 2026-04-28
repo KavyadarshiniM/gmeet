@@ -13,7 +13,7 @@ export const Navbar: React.FC = () => {
                 <li><Link href="/#how">Process</Link></li>
                 <li><Link href="/analytics">Analyticsssss</Link></li>
                 <li><Link href="/calendar">Calender</Link></li>
-                <li><Link href="/generator">Generatorssss</Link></li>
+                <li><Link href="/generator">Generatorsssssss</Link></li>
             </ul>
             <Link href="/generator" className="nav-cta"><span>Generate Now ↓</span></Link>
         </nav>
