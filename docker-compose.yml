@@ -26,13 +26,15 @@ services:
       - backend
     networks:
       - app-network
-
+  
   prometheus:
     image: prom/prometheus:latest
     ports:
       - "9090:9090"
     volumes:
-      - /var/jenkins_home/workspace/gmeet-pipeline/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /var/jenkins_home/workspace/gmeet-pipeline/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
       - app-network
 
