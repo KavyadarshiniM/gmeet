@@ -1,3 +1,4 @@
+cat > docker-compose.yml << 'EOF'
 version: '3.8'
 
 services:
@@ -26,13 +27,13 @@ services:
       - backend
     networks:
       - app-network
-  
+
   prometheus:
     image: prom/prometheus:latest
     ports:
       - "9090:9090"
     volumes:
-      - /var/jenkins_home/workspace/gmeet-pipeline/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/etc/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
@@ -57,4 +58,5 @@ networks:
 
 volumes:
   grafana-data:
-
+  prometheus-data:
+EOF
