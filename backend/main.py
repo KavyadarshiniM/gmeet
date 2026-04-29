@@ -10,6 +10,9 @@ import logging
 import sys
 from pathlib import Path
 
+# ✅ ADD THIS
+from prometheus_fastapi_instrumentator import Instrumentator
+
 # Add app directory to path
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -23,14 +26,11 @@ from app.core.database import connect_to_mongo, close_mongo_connection
 # Lifespan context
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup
     logger.info("Application starting up")
     await connect_to_mongo()
     yield
-    # Shutdown
     logger.info("Application shutting down")
     await close_mongo_connection()
-
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -40,10 +40,13 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# ✅ ADD THIS (IMPORTANT)
+Instrumentator().instrument(app).expose(app)
+
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust in production
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
