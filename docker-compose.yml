@@ -7,8 +7,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - CLAUDE_API_KEY=your_api_key_here
-      - MONGODB_URL=your_mongodb_atlas_url
+      - CLAUDE_API_KEY=AIzaSyBxMR_UiyPHgeAZ99FUMUvj2IEd5dGK30M
+      - MONGODB_URL=mongodb+srv://kishoresankarg23cse_db_user:1234%40sankar@cluster0.1cmrszx.mongodb.net/
       - DATABASE_NAME=meeting_notes_db
       - ENVIRONMENT=development
       - DEBUG=True
@@ -57,3 +57,4 @@ networks:
 
 volumes:
   grafana-data:
+
