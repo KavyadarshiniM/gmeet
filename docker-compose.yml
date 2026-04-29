@@ -29,15 +29,6 @@ services:
     networks:
       - app-network
 
-  mongo:
-    image: mongo:6.0
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-    networks:
-      - app-network
-
   prometheus:
     image: prom/prometheus:latest
     ports:
