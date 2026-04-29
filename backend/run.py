@@ -3,7 +3,6 @@ Meeting Notes Generator
 Startup script with proper async event loop handling
 """
 
-import asyncio
 import uvicorn
 import logging
 from main import app
